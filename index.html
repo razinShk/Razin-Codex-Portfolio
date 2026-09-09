@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Razin Shaikh — Full Stack Developer</title>
+<meta name="description" content="Razin Shaikh — Full-stack developer and AI enthusiast building practical, impactful digital products.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#f4f1eb;--ink:#111;--muted:#6d6a63;--line:#d9d5cd;--card:#fff;--accent:#d8ff3e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1240px;margin:auto;padding:0 28px}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{font:700 24px "Space Grotesk"}nav .links{display:flex;gap:30px;font-size:14px}nav .links a{opacity:.7}nav .links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;gap:10px;border:1px solid #111;border-radius:999px;padding:13px 18px;font-weight:600;font-size:14px;background:#111;color:#fff;transition:.2s}.btn:hover{transform:translateY(-2px)}
+.btn.light{background:transparent;color:#111}.btn.green{background:var(--accent);color:#111;border-color:#111}
+.hero-stage{position:relative;isolation:isolate;min-height:100svh;overflow:hidden;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding:0 max(28px,calc((100vw - 1240px)/2));}.hero-stage > nav,.hero-stage > .hero{position:relative;z-index:2;max-width:1240px;margin-left:auto;margin-right:auto}.cloud-shader{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none}.hero{padding:105px 0 80px;min-height:calc(100svh - 82px);}.eyebrow{display:flex;align-items:center;gap:10px;font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}.dot{width:8px;height:8px;background:#38b000;border-radius:50%}
+h1{font:600 clamp(58px,9vw,128px)/.9 "Space Grotesk";letter-spacing:-.065em;max-width:1080px;margin:24px 0}.hero h1 span{color:#777}.hero-bottom{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-top:55px}.hero-copy{max-width:530px;font-size:20px;line-height:1.5;color:#45423d}.actions{display:flex;gap:10px;flex-wrap:wrap}
+.marquee{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0;font:600 18px "Space Grotesk";text-transform:uppercase}.marquee span{margin-right:35px}.marquee b{color:#8b8881}
+section{padding:110px 0}.section-head{display:grid;grid-template-columns:1fr 2fr;gap:40px;margin-bottom:55px}.label{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}h2{font:600 clamp(42px,6vw,76px)/.95 "Space Grotesk";letter-spacing:-.055em;margin:0;max-width:850px}p{line-height:1.6}
+.services{display:grid;grid-template-columns:1fr 1fr;gap:18px}.service{background:#111;color:#fff;padding:38px;border-radius:22px;min-height:310px;position:relative}.service:nth-child(2){background:var(--accent);color:#111}.service h3{font:600 30px "Space Grotesk";margin:0 0 15px}.service p{max-width:460px;color:#bcbab4}.service:nth-child(2) p{color:#3c3c35}.tags{position:absolute;bottom:30px;left:38px;right:38px;display:flex;gap:8px;flex-wrap:wrap}.tag{border:1px solid currentColor;border-radius:999px;padding:8px 11px;font-size:12px}
+.projects-section{position:relative;overflow:hidden}
+.projects-section .section-head{position:relative;z-index:2;margin-bottom:58px}
+.projects-section .projects-label{position:absolute;z-index:0;top:-30px;left:0;font:600 clamp(110px,18vw,250px)/.78 "Space Grotesk";letter-spacing:-.09em;color:rgba(17,17,17,.075);pointer-events:none;white-space:nowrap}
+.projects-themed{position:relative;z-index:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.theme-project{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden;cursor:pointer;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.theme-project:hover{transform:translateY(-7px);box-shadow:0 26px 60px rgba(0,0,0,.12)}
+.theme-wide{grid-column:span 2}
+.mockup{position:relative;height:340px;overflow:hidden;padding:22px;background:#e9e5dc;color:#111}
+.theme-wide .mockup{height:390px}
+.mock-top{height:32px;display:flex;align-items:center;justify-content:space-between;font-size:10px;letter-spacing:.1em;position:relative;z-index:2}
+.brand{font:600 13px "Space Grotesk";letter-spacing:-.02em}.brand span{opacity:.5}.mock-menu{font-size:10px;color:#777}.mock-pill{border:1px solid rgba(0,0,0,.15);border-radius:99px;padding:6px 9px;font-size:9px}.live{font-size:9px;letter-spacing:.1em}
+.theme-copy{padding:25px 28px 27px;display:grid;grid-template-columns:1fr auto;column-gap:20px;align-items:end}
+.theme-copy span{grid-column:1 / -1;font-size:10px;letter-spacing:.13em;color:#8a8780;margin-bottom:8px}.theme-copy h3{font:600 clamp(26px,3vw,42px)/.94 "Space Grotesk";letter-spacing:-.055em;margin:0}.theme-copy p{font-size:13px;color:#777;margin:9px 0 0;grid-column:1}.theme-copy b{font-size:12px;grid-column:2;grid-row:2;white-space:nowrap;align-self:end}
+.mock-med{background:linear-gradient(135deg,#e9f4f1,#f8f5ed)}.med-body{height:225px;display:flex;align-items:center;justify-content:center;gap:30px}.med-icon{width:72px;height:72px;border-radius:20px;background:#111;color:#d8ff3e;display:grid;place-items:center;font-size:30px;box-shadow:0 15px 35px rgba(0,0,0,.14)}.med-body small,.car-head small,.school-welcome small,.salon-hero small{display:block;font-size:9px;letter-spacing:.16em;color:#777}.med-body strong{display:block;font:600 48px/.88 "Space Grotesk";letter-spacing:-.07em;margin-top:9px}.med-body p{font-size:11px;color:#777}.med-row{height:43px;border-top:1px solid rgba(0,0,0,.1);display:flex;align-items:center;justify-content:space-between;font-size:10px;color:#666}
+.mock-result{background:linear-gradient(145deg,#f6f2ff,#f2f5ee)}.result-title{font:600 46px/.9 "Space Grotesk";letter-spacing:-.07em;margin:48px 0 20px}.result-title em{font-style:normal;color:#777}.result-sheet{display:grid;grid-template-columns:1fr 1fr 60px;gap:6px;padding:14px;background:#fff;border-radius:15px;box-shadow:0 16px 35px rgba(0,0,0,.08);font-size:9px}.result-sheet i{height:9px;border-radius:4px;background:#e7e5df}.result-button{margin-top:12px;background:#111;color:#fff;border-radius:10px;padding:11px 13px;font-size:10px;text-align:center}
+.mock-foot{background:#172a24;color:#fff}.field{height:235px;margin:8px 18px;position:relative;border:1px solid rgba(255,255,255,.35);background:repeating-linear-gradient(90deg,transparent 0 24%,rgba(255,255,255,.12) 24.2% 24.5%)}.pitch-line{position:absolute;left:0;right:0;border-top:1px solid rgba(255,255,255,.25)}.p1{top:35%}.p2{top:70%}.ball{position:absolute;width:12px;height:12px;border-radius:50%;background:#d8ff3e;left:57%;top:42%;box-shadow:0 0 0 6px rgba(216,255,62,.14)}.player{position:absolute;width:24px;height:24px;border:2px solid #fff;border-radius:50%}.pl1{left:25%;top:30%}.pl2{left:67%;top:61%}.pl3{left:43%;top:72%}.track{position:absolute;width:120px;height:55px;border:1px dashed #d8ff3e;border-radius:50%;left:43%;top:30%;transform:rotate(-20deg)}.foot-data{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.08em;color:#b7c7c0}.foot-data strong{color:#d8ff3e}
+.mock-cars{background:#20221f;color:#fff}.car-head{padding:34px 8px 20px}.car-head strong{display:block;font:600 54px/.9 "Space Grotesk";letter-spacing:-.07em;margin-top:7px}.car-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.car-grid div{background:#2d302b;border-radius:12px;padding:14px}.car-grid small{font-size:8px;color:#aaa}.car-grid b{display:block;font:500 26px "Space Grotesk";margin-top:5px}.invoice{margin-top:10px;background:#f4f1eb;color:#111;border-radius:12px;padding:12px;display:grid;grid-template-columns:1fr auto auto;gap:15px;align-items:center;font-size:9px}.invoice i{font-style:normal;background:#d8ff3e;padding:5px 7px;border-radius:99px}
+.mock-school{background:linear-gradient(135deg,#edf2ec,#f7f3eb)}.school-welcome{padding:38px 8px 20px}.school-welcome strong{display:block;font:600 47px/.9 "Space Grotesk";letter-spacing:-.07em;margin-top:8px}.school-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.school-stats div{background:#fff;border:1px solid #e1ddd4;border-radius:12px;padding:13px}.school-stats b{display:block;font:500 25px "Space Grotesk"}.school-stats span{font-size:8px;color:#888}.school-line{display:flex;gap:7px;align-items:end;height:60px;margin-top:10px}.school-line i{flex:1;border-radius:5px 5px 0 0;background:#c8d2c6;height:25%}.school-line i:nth-child(2){height:55%}.school-line i:nth-child(3){height:38%}.school-line i:nth-child(4){height:75%}.school-line i:nth-child(5){height:62%}
+.mock-salon{background:linear-gradient(135deg,#d7c5a1,#f2e9d8)}.salon-hero{padding:48px 8px}.salon-hero strong{display:block;font:600 54px/.86 "Space Grotesk";letter-spacing:-.075em;margin:9px 0 20px}.calendar{background:rgba(255,255,255,.72);border:1px solid rgba(0,0,0,.1);border-radius:14px;padding:13px;display:flex;align-items:center;gap:10px;font-size:9px}.calendar b{font:500 25px "Space Grotesk"}.calendar button{margin-left:auto;border:0;background:#111;color:#fff;border-radius:99px;padding:9px 12px;font-size:9px}
+@media(max-width:800px){.projects-themed{grid-template-columns:1fr}.theme-wide{grid-column:span 1}.mockup,.theme-wide .mockup{height:310px}.theme-copy{grid-template-columns:1fr}.theme-copy b{grid-column:1;grid-row:auto;margin-top:15px}.theme-copy h3{font-size:30px}.projects-section .projects-label{top:-5px;font-size:100px}}
+@media(prefers-reduced-motion:reduce){.theme-project{transition:none}.theme-project:hover{transform:none;box-shadow:none}}
+.scale-section{padding:105px 0 75px}
+.scale-heading{margin-bottom:45px}
+.scale-heading h2{margin-top:15px}
+.scale-heading h2 span{color:#777}
+.scale-grid{display:grid;grid-template-columns:1.08fr 1fr 1fr;grid-template-rows:auto auto;gap:18px}
+.scale-card{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.scale-visual{grid-row:1 / span 2;min-height:580px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,#faf9f6,#efede7)}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;flex:1;align-content:center}
+.mini-tile{height:112px;border:1px solid #e2dfd8;border-radius:16px;background:rgba(255,255,255,.72);display:flex;align-items:center;justify-content:center;font:600 16px "Space Grotesk";color:#9a978f;box-shadow:0 10px 28px rgba(0,0,0,.03)}
+.mini-tile.active{background:#111;color:#fff;border-color:#111;transform:translateY(-4px);box-shadow:0 18px 35px rgba(0,0,0,.13)}
+.scale-card-bottom{padding-top:30px}
+.scale-card-bottom h3,.tech-title{font:600 22px "Space Grotesk";margin:0 0 10px}
+.scale-card-bottom p{margin:0;color:#777;max-width:390px}
+.scale-middle{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+.stat-card{padding:34px;display:flex;flex-direction:column;justify-content:center;background:#fff}
+.stat-number{font:600 clamp(76px,8vw,118px)/.8 "Space Grotesk";letter-spacing:-.08em}
+.stat-caption{font:500 20px "Space Grotesk";margin-top:20px}
+.stat-card p{color:#8a8780;max-width:380px;margin:28px 0 0}
+.statement-card{padding:32px;position:relative;background:#f9f7f2}
+.statement-mark{font:700 70px/.7 Georgia;color:#bbb6ac}
+.statement-card p{font:500 20px/1.45 "Space Grotesk";margin:12px 0 26px;max-width:450px}
+.statement-by{font-size:14px;font-weight:700}.statement-by span{color:#8a8780;font-weight:400;margin-left:6px}
+.tech-card{grid-column:2 / 4;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:30px;min-height:125px}
+.tech-pills{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.tech-pills span{padding:10px 13px;border:1px solid #ddd9d1;border-radius:999px;background:#faf9f6;font-size:12px;font-weight:600}
+@media(max-width:900px){
+ .scale-grid{grid-template-columns:1fr 1fr}.scale-visual{grid-row:auto;min-height:430px}.scale-middle{grid-column:1 / 3}.tech-card{grid-column:1 / 3}
+}
+@media(max-width:650px){
+ .scale-section{padding:75px 0 55px}.scale-grid{display:block}.scale-card,.scale-middle{margin-bottom:14px}.scale-middle{display:block}.scale-middle .scale-card{margin-bottom:14px}.scale-visual{min-height:430px}.mini-tile{height:80px}.tech-card{display:block}.tech-pills{justify-content:flex-start;margin-top:22px}
+}
+.about{background:#111;color:#fff;border-radius:30px;padding:70px}.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:50px}.about p{font-size:22px;line-height:1.5;color:#d1cec7}.experience{margin-top:70px;border-top:1px solid #3b3b38}.exp{display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:32px 0;border-bottom:1px solid #3b3b38}.exp-meta{color:#aaa}.exp h3{font:600 27px "Space Grotesk";margin:0 0 10px}.exp p{color:#bdbab3;margin:0 0 20px}.techs{display:flex;gap:7px;flex-wrap:wrap}.tech{font-size:12px;border:1px solid #555;border-radius:999px;padding:7px 10px;color:#ddd}
+.contact{padding-bottom:55px}.contact-card{background:var(--accent);border:1px solid #111;border-radius:30px;padding:70px}.contact-card h2{max-width:850px}.contact-row{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-top:45px}.contact-email{font:500 clamp(22px,3vw,38px) "Space Grotesk";word-break:break-word}
+footer{border-top:1px solid var(--line);padding:25px 0 35px;display:flex;justify-content:space-between;gap:20px;color:#777;font-size:13px}.socials{display:flex;gap:18px}.socials a:hover{color:#111}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:800px){nav .links{display:none}.hero{padding-top:75px}.hero-bottom,.section-head,.about-grid,.exp,.contact-row{grid-template-columns:1fr;display:grid}.services{grid-template-columns:1fr}.project,.project:nth-child(even){grid-template-columns:1fr}.project:nth-child(even) .project-image{order:0}.project-image{min-height:260px}
+.scale-section{padding:105px 0 75px}
+.scale-heading{margin-bottom:45px}
+.scale-heading h2{margin-top:15px}
+.scale-heading h2 span{color:#777}
+.scale-grid{display:grid;grid-template-columns:1.08fr 1fr 1fr;grid-template-rows:auto auto;gap:18px}
+.scale-card{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.scale-visual{grid-row:1 / span 2;min-height:580px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,#faf9f6,#efede7)}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;flex:1;align-content:center}
+.mini-tile{height:112px;border:1px solid #e2dfd8;border-radius:16px;background:rgba(255,255,255,.72);display:flex;align-items:center;justify-content:center;font:600 16px "Space Grotesk";color:#9a978f;box-shadow:0 10px 28px rgba(0,0,0,.03)}
+.mini-tile.active{background:#111;color:#fff;border-color:#111;transform:translateY(-4px);box-shadow:0 18px 35px rgba(0,0,0,.13)}
+.scale-card-bottom{padding-top:30px}
+.scale-card-bottom h3,.tech-title{font:600 22px "Space Grotesk";margin:0 0 10px}
+.scale-card-bottom p{margin:0;color:#777;max-width:390px}
+.scale-middle{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+.stat-card{padding:34px;display:flex;flex-direction:column;justify-content:center;background:#fff}
+.stat-number{font:600 clamp(76px,8vw,118px)/.8 "Space Grotesk";letter-spacing:-.08em}
+.stat-caption{font:500 20px "Space Grotesk";margin-top:20px}
+.stat-card p{color:#8a8780;max-width:380px;margin:28px 0 0}
+.statement-card{padding:32px;position:relative;background:#f9f7f2}
+.statement-mark{font:700 70px/.7 Georgia;color:#bbb6ac}
+.statement-card p{font:500 20px/1.45 "Space Grotesk";margin:12px 0 26px;max-width:450px}
+.statement-by{font-size:14px;font-weight:700}.statement-by span{color:#8a8780;font-weight:400;margin-left:6px}
+.tech-card{grid-column:2 / 4;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:30px;min-height:125px}
+.tech-pills{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.tech-pills span{padding:10px 13px;border:1px solid #ddd9d1;border-radius:999px;background:#faf9f6;font-size:12px;font-weight:600}
+@media(max-width:900px){
+ .scale-grid{grid-template-columns:1fr 1fr}.scale-visual{grid-row:auto;min-height:430px}.scale-middle{grid-column:1 / 3}.tech-card{grid-column:1 / 3}
+}
+@media(max-width:650px){
+ .scale-section{padding:75px 0 55px}.scale-grid{display:block}.scale-card,.scale-middle{margin-bottom:14px}.scale-middle{display:block}.scale-middle .scale-card{margin-bottom:14px}.scale-visual{min-height:430px}.mini-tile{height:80px}.tech-card{display:block}.tech-pills{justify-content:flex-start;margin-top:22px}
+}
+.about{padding:40px 25px}.contact-card{padding:42px 25px}.hero-copy{font-size:17px}section{padding:75px 0}}
+
+/* --- Motion + live project previews --- */
+.project{transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.project:hover{transform:translateY(-8px) rotateX(.7deg);box-shadow:0 25px 70px rgba(0,0,0,.10)}
+.project-image{position:relative}
+.live-preview{padding:0;background:#c9c5bc}
+.preview-browser{position:relative;width:100%;height:100%;min-height:380px;background:#fff;overflow:hidden}
+.browserbar{height:34px;position:absolute;z-index:3;top:0;left:0;right:0;background:rgba(245,245,242,.94);backdrop-filter:blur(12px);display:flex;align-items:center;gap:6px;padding:0 12px;border-bottom:1px solid #ddd;color:#777;font:11px "DM Sans";transition:transform .35s ease}
+.browserbar i{display:block;width:7px;height:7px;border-radius:50%;background:#aaa}.browserbar span{margin-left:7px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.preview-browser iframe{position:absolute;top:34px;left:0;width:100%;height:calc(100% - 34px);border:0;background:white;transform-origin:top left;pointer-events:none}
+.preview-fade{position:absolute;inset:34px 0 0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.06));pointer-events:none}
+.preview-overlay{position:absolute;right:18px;bottom:18px;background:#111;color:#fff;border-radius:999px;padding:10px 14px;font-size:12px;font-weight:700;opacity:0;transform:translateY(8px);transition:.3s;z-index:4}
+.project:hover .preview-overlay{opacity:1;transform:none}
+.project:hover .browserbar{transform:translateY(-2px)}
+.project-image::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);pointer-events:none}
+@media(max-width:800px){.preview-browser{min-height:260px}.preview-browser iframe{height:calc(100% - 34px)}.preview-overlay{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.project:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero-stage">
+<canvas class="cloud-shader" id="cloudShader" aria-hidden="true"></canvas>
+<nav>
+  <a class="logo" href="#">Razin.</a>
+  <div class="links"><a href="#work">Work</a><a href="#services">What I do</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+  <a class="btn green" href="mailto:razinshaikh3133@gmail.com">Let's talk ↗</a>
+</nav>
+
+<header class="hero reveal">
+  <div class="eyebrow"><span class="dot"></span> Available for opportunities · India</div>
+  <h1>I build digital products <span>that solve real problems.</span></h1>
+  <div class="hero-bottom">
+    <p class="hero-copy">I’m Razin Shaikh, a Full Stack Developer and AI enthusiast creating practical digital experiences that respect humans and scale with clarity.</p>
+    <div class="actions"><a class="btn" href="#work">See my work ↓</a><a class="btn light" href="#contact">Get in touch ↗</a></div>
+  </div>
+</header>
+</div>
+
+<div class="marquee"><span>FULL STACK DEVELOPMENT</span><b>✦</b><span>AI & AUTOMATION</span><b>✦</b><span>WEB & MOBILE</span><b>✦</b><span>REAL-WORLD PRODUCTS</span><b>✦</b></div>
+
+<section id="services" class="reveal">
+  <div class="section-head"><div class="label">01 / What I do</div><h2>From an idea to a working product.</h2></div>
+  <div class="services">
+    <article class="service"><h3>DEVELOP</h3><p>Full-stack development with scalable and real-world solutions. Building practical, high-performance web and mobile applications using modern frontend and backend technologies.</p><div class="tags"><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">React Native</span><span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">MongoDB</span></div></article>
+    <article class="service"><h3>AI & AUTOMATION</h3><p>Creating smart systems using machine learning, computer vision, and automation workflows — including AI medicine reminders and football tracking.</p><div class="tags"><span class="tag">Python</span><span class="tag">YOLOv8</span><span class="tag">OpenCV</span><span class="tag">Roboflow</span><span class="tag">LLaMA Vision</span><span class="tag">TensorFlow / PyTorch</span></div></article>
+  </div>
+</section>
+
+
+<section id="work" class="projects-section reveal">
+  <div class="projects-label" aria-hidden="true">Projects</div>
+  <div class="section-head">
+    <div class="label">02 / Projects</div>
+    <h2>Selected work</h2>
+  </div>
+
+  <div class="projects-themed">
+    <a class="theme-project theme-wide" href="project.html?id=medicine">
+      <div class="mockup mock-med">
+        <div class="mock-top"><span class="brand">MED<span>SCAN</span></span><span class="mock-dot"></span><span class="mock-menu">•••</span></div>
+        <div class="med-body"><div class="med-icon">✚</div><div><small>SMART HEALTH</small><strong>Medicine<br>reminders.</strong><p>Scan → understand → remember.</p></div></div>
+        <div class="med-row"><span>Prescription scan</span><span>98% ready</span></div>
+      </div>
+      <div class="theme-copy"><span>01 / MOBILE · AI</span><h3>AI Medicine Reminder</h3><p>Prescription scanning and smart medicine reminders.</p><b>Open project ↗</b></div>
+    </a>
+
+    <a class="theme-project" href="project.html?id=resulty">
+      <div class="mockup mock-result">
+        <div class="mock-top"><span class="brand">resulty.</span><span class="mock-pill">BULK</span></div>
+        <div class="result-title">Results,<br><em>without the work.</em></div>
+        <div class="result-sheet"><span>Student</span><span>Score</span><span>PDF</span><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="result-button">Generate 1,000 PDFs →</div>
+      </div>
+      <div class="theme-copy"><span>02 / REACT</span><h3>Bulk Result Generator</h3><p>Excel in. Thousands of PDFs out.</p><b>Open project ↗</b></div>
+    </a>
+
+    <a class="theme-project" href="project.html?id=football">
+      <div class="mockup mock-foot">
+        <div class="mock-top"><span class="brand">FIELD / 01</span><span class="live">● LIVE</span></div>
+        <div class="field"><span class="pitch-line p1"></span><span class="pitch-line p2"></span><span class="ball"></span><span class="player pl1"></span><span class="player pl2"></span><span class="player pl3"></span><span class="track"></span></div>
+        <div class="foot-data"><strong>AI TRACKING</strong><span>Ball  24.8 km/h</span><span>Players  14</span></div>
+      </div>
+      <div class="theme-copy"><span>03 / COMPUTER VISION</span><h3>AI Football Tracking</h3><p>Ball + player tracking with highlight creation.</p><b>Open project ↗</b></div>
+    </a>
+
+    <a class="theme-project theme-wide" href="project.html?id=cars">
+      <div class="mockup mock-cars">
+        <div class="mock-top"><span class="brand">ELITE / MOTORS</span><span class="mock-menu">Dashboard</span></div>
+        <div class="car-head"><small>FLEET OVERVIEW</small><strong>24 vehicles</strong></div>
+        <div class="car-grid"><div><small>AVAILABLE</small><b>18</b></div><div><small>RENTED</small><b>06</b></div><div><small>PARTS</small><b>42</b></div></div>
+        <div class="invoice"><span>Invoice #00482</span><b>₹ 24,500</b><i>PAID</i></div>
+      </div>
+      <div class="theme-copy"><span>04 / REACT · SUPABASE</span><h3>Car Management System</h3><p>Rental, spare-parts and invoice workflows.</p><b>Open project ↗</b></div>
+    </a>
+
+    <a class="theme-project" href="project.html?id=school">
+      <div class="mockup mock-school">
+        <div class="mock-top"><span class="brand">IMPACT.</span><span class="mock-pill">SCHOOL</span></div>
+        <div class="school-welcome"><small>GOOD MORNING</small><strong>Welcome back.</strong></div>
+        <div class="school-stats"><div><b>428</b><span>Students</span></div><div><b>32</b><span>Teachers</span></div><div><b>96%</b><span>Attendance</span></div></div>
+        <div class="school-line"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="theme-copy"><span>05 / REACT · SUPABASE</span><h3>Impact School</h3><p>School management, simplified.</p><b>Open project ↗</b></div>
+    </a>
+
+    <a class="theme-project theme-wide" href="project.html?id=salon">
+      <div class="mockup mock-salon">
+        <div class="mock-top"><span class="brand">TONI & GUY</span><span class="mock-menu">BOOKING</span></div>
+        <div class="salon-hero"><small>YOUR NEXT APPOINTMENT</small><strong>Find your<br>perfect time.</strong><div class="calendar"><span>MON</span><b>18</b><span>JUN</span><button>Book now →</button></div></div>
+      </div>
+      <div class="theme-copy"><span>06 / REACT · SUPABASE</span><h3>Salon Booking</h3><p>Booking and management software for salons.</p><b>Open project ↗</b></div>
+    </a>
+  </div>
+</section>
+
+
+
+<section class="scale-section reveal" id="approach">
+  <div class="scale-heading">
+    <div class="label">03 / What I build</div>
+    <h2>Building practical products<br><span>that make an impact.</span></h2>
+  </div>
+
+  <div class="scale-grid">
+    <div class="scale-card scale-visual">
+      <div class="mini-grid">
+        <div class="mini-tile active">AI</div><div class="mini-tile">WEB</div><div class="mini-tile">APP</div>
+        <div class="mini-tile">DATA</div><div class="mini-tile active">CV</div><div class="mini-tile">SAAS</div>
+        <div class="mini-tile">ERP</div><div class="mini-tile active">AI</div><div class="mini-tile">UX</div>
+      </div>
+      <div class="scale-card-bottom">
+        <h3>Ideas → useful products</h3>
+        <p>From management systems to intelligent applications, I focus on solving real problems.</p>
+      </div>
+    </div>
+
+    <div class="scale-middle">
+      <div class="scale-card stat-card">
+        <div class="stat-number">6+</div>
+        <div class="stat-caption">Products & systems built</div>
+        <p>Across education, automotive, hospitality, productivity and AI.</p>
+      </div>
+      <div class="scale-card statement-card">
+        <div class="statement-mark">“</div>
+        <p>I focus on solving problems, crafting smooth user experiences, and turning ideas into efficient, real-world applications.</p>
+        <div class="statement-by">— Razin Shaikh <span>Full Stack Developer</span></div>
+      </div>
+    </div>
+
+    <div class="scale-card tech-card">
+      <div class="tech-title">Technologies I use</div>
+      <div class="tech-pills">
+        <span>React</span><span>Next.js</span><span>TypeScript</span><span>React Native</span>
+        <span>Node.js</span><span>Supabase</span><span>MongoDB</span><span>Python</span>
+        <span>YOLOv8</span><span>OpenCV</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <div class="about">
+    <div class="about-grid"><div><div class="label">04 / About me</div></div><div><h2>Practical products. Smooth experiences.</h2><p>I’m Razin Shaikh, a Full stack developer and AI enthusiast who loves building practical and impactful digital products. I’ve created tools across different industries. I focus on solving problems, crafting smooth user experiences, and turning ideas into efficient, real-world applications.</p></div></div>
+    <div class="experience">
+      <div class="exp"><div class="exp-meta">2024 — Present<br>Remote</div><div><h3>AI Application Developer</h3><p>Built and published an AI-powered medicine reminder mobile app that scans prescriptions, extracts medicine details automatically, and schedules smart notifications. Also built an AI football tracking camera using computer vision and Raspberry Pi.</p><div class="techs"><span class="tech">React</span><span class="tech">Next.js</span><span class="tech">TypeScript</span><span class="tech">Computer Vision</span></div></div></div>
+      <div class="exp"><div class="exp-meta">2023 — 2024<br>Remote</div><div><h3>Full Stack Developer</h3><p>Built a die-inspection data entry tool for the Tata Sierra car production line, car showroom management for Elite Motors, and software for Fast Cabs.</p><div class="techs"><span class="tech">React</span><span class="tech">Node.js</span><span class="tech">MongoDB</span><span class="tech">Express</span><span class="tech">MERN</span></div></div></div>
+      <div class="exp"><div class="exp-meta">2022 — 2023<br>Remote</div><div><h3>Full Stack Developer</h3><p>Developed management systems including a school administration tool, a car inventory management platform for showrooms, and a salon appointment booking system with automated reminders.</p><div class="techs"><span class="tech">React</span><span class="tech">Next.js</span><span class="tech">TailwindCSS</span><span class="tech">JavaScript</span><span class="tech">Framer Motion</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact reveal" id="contact">
+  <div class="contact-card"><div class="label">05 / Contact</div><h2>Have an idea worth building?</h2><div class="contact-row"><div class="contact-email">razinshaikh3133@gmail.com</div><a class="btn" href="mailto:razinshaikh3133@gmail.com">Start a conversation ↗</a></div></div>
+</section>
+
+<footer><span>© 2026 Razin Shaikh</span><div class="socials"><a href="https://github.com/razinShk" target="_blank">GitHub</a><a href="https://www.linkedin.com/in/razin-shaikh-a72a30343/" target="_blank">LinkedIn</a><a href="https://x.com/Razinshk" target="_blank">X</a><a href="https://www.instagram.com/razin_shk_2/" target="_blank">Instagram</a></div></footer>
+</div>
+<script>
+/* Full-screen Cloud Shader: the shader belongs to the first viewport only. */
+(function initCloudShader(){
+  const canvas=document.getElementById('cloudShader');
+  if(!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const gl=canvas.getContext('webgl',{alpha:false,antialias:false});
+  if(!gl) return;
+  const vertex=`attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+  const fragment=`precision highp float;uniform vec2 uResolution;uniform float uTime;
+  float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+  float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1.,0.)),f.x),mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x),f.y);}
+  float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*noise(p);p=p*2.02+vec2(17.,9.);a*=.5;}return v;}
+  void main(){vec2 uv=gl_FragCoord.xy/uResolution.xy;float aspect=uResolution.x/uResolution.y;vec2 p=vec2((uv.x-.5)*aspect,uv.y-.5);float t=uTime*.035;
+  vec2 q=p*2.05+vec2(t*.42,t*.0525);float n=fbm(q+fbm(q*1.55)*.55);float cloud=smoothstep(.42,.72,n);float wisps=smoothstep(.4,.68,fbm(p*4.+vec2(t*.825,-t*.12)));cloud=clamp(cloud*.92+wisps*.2,0.,1.);
+  vec3 sky=mix(vec3(.76,.88,.96),vec3(.28,.53,.75),uv.y);vec3 cloudCol=vec3(.99,.985,.96);vec3 col=mix(sky,cloudCol,cloud*.88);gl_FragColor=vec4(col,1.);}`;
+  function compile(type,src){const sh=gl.createShader(type);gl.shaderSource(sh,src);gl.compileShader(sh);return sh;}
+  const vs=compile(gl.VERTEX_SHADER,vertex),fs=compile(gl.FRAGMENT_SHADER,fragment);if(!gl.getShaderParameter(vs,gl.COMPILE_STATUS)||!gl.getShaderParameter(fs,gl.COMPILE_STATUS))return;
+  const program=gl.createProgram();gl.attachShader(program,vs);gl.attachShader(program,fs);gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))return;gl.useProgram(program);
+  const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+  const loc=gl.getAttribLocation(program,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  const resLoc=gl.getUniformLocation(program,'uResolution'),timeLoc=gl.getUniformLocation(program,'uTime');let start=performance.now();
+  function resize(){const d=Math.min(devicePixelRatio||1,1.5),w=Math.max(1,Math.floor(canvas.clientWidth*d)),h=Math.max(1,Math.floor(canvas.clientHeight*d));if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h);}}
+  function frame(now){resize();gl.uniform2f(resLoc,canvas.width,canvas.height);gl.uniform1f(timeLoc,(now-start)/1000);gl.drawArrays(gl.TRIANGLES,0,6);requestAnimationFrame(frame);} resize();requestAnimationFrame(frame);
+})();
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach((e,i)=>{e.style.transitionDelay=(i*40)+'ms';obs.observe(e)});
+
+const projects=document.querySelectorAll('.project');
+projects.forEach(card=>{
+  card.addEventListener('pointermove',e=>{
+    if(window.innerWidth<900)return;
+    const r=card.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(1100px) rotateX(${-y*2}deg) rotateY(${x*2}deg) translateY(-8px)`;
+  });
+  card.addEventListener('pointerleave',()=>card.style.transform='');
+});
+
+const hero=document.querySelector('.hero h1');
+window.addEventListener('scroll',()=>{
+  if(!hero)return;
+  const y=Math.min(window.scrollY,500);
+  hero.style.transform=`translateY(${y*.045}px)`;
+},{passive:true});
+</script>
+</body>
+</html>
